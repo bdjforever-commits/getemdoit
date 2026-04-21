@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --obsidian: #050505;
+  --hero-start: #0d1f2d;
+  --hero-end: #050505;
+  --platinum: #e5e4e2;
+  --ultraviolet: #7f00ff;
+  --gold: #d4af37;
+  --surface: #121212;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--obsidian);
+  color: var(--platinum);
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(127, 0, 255, 0.18), rgba(5, 5, 5, 0) 45%),
+    linear-gradient(165deg, var(--hero-start) 0%, var(--hero-end) 65%);
+}
+
+.surface-card {
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(7, 7, 7, 0.8));
+  border: 1px solid rgba(229, 228, 226, 0.12);
+  box-shadow:
+    0 24px 65px rgba(0, 0, 0, 0.42),
+    0 0 48px rgba(127, 0, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 0.95rem;
+  padding: 1.2rem;
+}
+
+.display-label {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: rgba(212, 175, 55, 0.95);
+  font-family: var(--font-display), sans-serif;
+}
+
+.display-type {
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-family: var(--font-display), sans-serif;
+}
+
+.glass-surface {
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(7, 7, 7, 0.86));
+  border: 1px solid rgba(229, 228, 226, 0.12);
+  backdrop-filter: blur(9px);
+}
+
+.gradient-stroke {
+  position: relative;
+}
+
+.gradient-stroke::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(90deg, rgba(127, 0, 255, 0.58), rgba(212, 175, 55, 0.34));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
